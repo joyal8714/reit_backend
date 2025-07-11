@@ -1,4 +1,4 @@
-const Property = require('../models/property');
+const Property = require('../models/Property');
 
 exports.invest = async (req, res) => {
   const property = await Property.findById(req.params.id);

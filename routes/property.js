@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../middleware/auth');
 const role = require('../middleware/role');
-const { addproperty, getallproperties, getproperty } = require('../controllers/propertycontoller');
+const { addProperty, getAllProperties, getProperty } = require('../controllers/propertycontroller');
 
-router.post('/add', auth, role(['admin']), addproperty);
-router.get('/', auth, getallproperties);
-router.get('/:id', auth, getproperty);
+router.post('/add', auth, role(['admin']), addProperty);
+router.get('/',auth, getAllProperties);
+router.get('/:id', auth, getProperty);
 
 module.exports = router;

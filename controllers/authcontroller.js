@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-
+require('dotenv').config();
 exports.register=async(req,res)=>{
     const{username,email,password,role}=req.body
 const existing=await User.findOne({email})
